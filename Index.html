@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1220">
+  <title>CFB 27 Stat Tracker</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1220;
+      color: white;
+    }
+
+    header {
+      background: #111c31;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #263653;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    header p {
+      color: #9eabc2;
+      margin: 6px 0 0;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .card {
+      background: #111c31;
+      border: 1px solid #263653;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      border: 0;
+      border-radius: 10px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    button:active {
+      transform: scale(.98);
+    }
+
+    .step {
+      padding: 12px;
+      margin: 8px 0;
+      background: #18243b;
+      border-radius: 10px;
+    }
+
+    .step span {
+      color: #60a5fa;
+      font-weight: bold;
+    }
+
+    nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #111c31;
+      border-top: 1px solid #263653;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 4px;
+    }
+
+    nav button {
+      background: transparent;
+      margin: 0;
+      padding: 8px 4px;
+      font-size: 12px;
+    }
+
+    .content {
+      padding-bottom: 90px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🏈 CFB 27 Stat Tracker</h1>
+    <p>Your college football statistics app</p>
+  </header>
+
+  <div class="content">
+    <main>
+
+      <div class="card">
+        <h2>Get Started</h2>
+        <p>Follow the setup steps to build your football database.</p>
+
+        <div class="step">
+          <span>1.</span> Choose your team
+        </div>
+
+        <div class="step">
+          <span>2.</span> Choose your season
+        </div>
+
+        <div class="step">
+          <span>3.</span> Build your roster
+        </div>
+
+        <div class="step">
+          <span>4.</span> Add your schedule
+        </div>
+
+        <div class="step">
+          <span>5.</span> Track games live
+        </div>
+
+        <div class="step">
+          <span>6.</span> Review season & career stats
+        </div>
+
+        <button onclick="startSetup()">
+          Start Setup
+        </button>
+      </div>
+
+      <div class="card">
+        <h2>Dashboard</h2>
+        <p id="status">No team selected yet.</p>
+      </div>
+
+    </main>
+  </div>
+
+  <nav>
+    <button onclick="showMessage('Dashboard')">🏠<br>Home</button>
+    <button onclick="showMessage('Teams')">🏫<br>Teams</button>
+    <button onclick="showMessage('Players')">👤<br>Players</button>
+    <button onclick="showMessage('Games')">🏈<br>Games</button>
+    <button onclick="showMessage('Stats')">📊<br>Stats</button>
+  </nav>
+
+  <script>
+    function startSetup() {
+      document.getElementById("status").textContent =
+        "Next step: choose your team.";
+    }
+
+    function showMessage(section) {
+      document.getElementById("status").textContent =
+        section + " section coming next.";
+    }
+  </script>
+
+</body>
+</html>
